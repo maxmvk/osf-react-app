@@ -1,0 +1,9 @@
+.footer{
+    background-color: #f3f0ea;
+    box-sizing: border-box;
+    width: 1280px;
+    height: 344px;
+    padding-left: 55px;
+    padding-right: 55px;
+    margin: auto;
+}
