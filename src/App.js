@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { Route } from 'react-router-dom'
@@ -10,7 +10,7 @@ const App = (props) => {
     <div className="app-wrapper">
       <Header />
       <div className="app-wrapper-content">
-        <Route path="/home" render={() => <Homepage />} />
+        <Route path="/" render={() => <Homepage />} />
       </div>
       <Footer />
     </div>

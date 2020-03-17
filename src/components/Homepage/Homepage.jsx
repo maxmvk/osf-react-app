@@ -1,10 +1,13 @@
 import React from 'react';
-import styles from './Homepage.module.css';
+import styles from './Homepage.module.scss';
+import Carousel from './Carousel/Carousel';
+import PopularItems from './PopularItems/PopularItems';
 
 const Homepage = (props) => {
     return (
-        <div>
-            Homepage
+        <div className={styles.home}>
+            <Carousel />
+            <PopularItems />
         </div>
     )
 }

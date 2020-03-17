@@ -1,0 +1,61 @@
+@import '../../../../index.scss';
+
+.megamenu {
+    @include flexAuto;
+    left: 0;
+    top: 0;
+    height: 383px;
+    color: #ffffff;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    margin-top: 79px;
+
+    .wrapper {
+        @include flexAuto;
+        max-width: 1280px;
+        height: 384px;
+        background-color: $primary-grey;
+    }
+}
+
+.wrapperContent {
+    @include flexAuto;
+    box-sizing: border-box;
+    height: 275px;
+    max-width: 1170px;
+    justify-content: space-between;
+
+    .wrapperColumns {
+        @include flexAuto;
+        box-sizing: border-box;
+        height: 275px;
+        padding-left: 9px;
+        margin-left: 0;
+        max-width: 870px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .column {
+            color: white;
+            text-transform: none;
+            font-size: 15px;
+            font-weight: 400;
+            min-width: 160px;
+
+            div {
+                margin-top: 14px;
+            }
+
+            .category {
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }            
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+    }
+}

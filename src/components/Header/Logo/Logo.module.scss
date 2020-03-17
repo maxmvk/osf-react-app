@@ -1,0 +1,52 @@
+@import '../../../index.scss';
+
+.logoContainer {
+    position: relative;
+    margin: auto;
+
+    img {
+        width: 46px;
+        height: 46px;
+
+        @media (min-width: 650px) {
+            width: 63px;
+            height: 65px;
+            margin: auto;
+        }
+    }
+
+    h1,
+    h3 {
+        display: none;
+    }
+
+    @media (min-width: 650px) {
+        margin: 0;
+        
+        .link {
+            display: flex;
+            align-items: center;
+        }
+
+        h1,
+        h3 {
+            display: block;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        h1 {
+            color: #011847;
+            font-size: 32px;
+            letter-spacing: 6px;
+            font-weight: 900;
+            margin-bottom: -6px;
+        }
+
+        h3 {
+            color: $primary-green;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+}

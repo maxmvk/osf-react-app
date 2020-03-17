@@ -1,14 +1,17 @@
 import React from 'react';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import Logo from './Logo/Logo';
-import Navbar from './Navbar/Navbar';
+import NavIcons from './NavIcons/NavIcons';
+import NavbarContainer from './Navbar/NavbarContainer';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className={styles.header}>
             <div className={styles.headerContainer}>
+                <span className={styles.toggle}>☰</span>
                 <Logo />
-                <Navbar />
+                <NavbarContainer />
+                <NavIcons />
             </div>
         </header>
     )
