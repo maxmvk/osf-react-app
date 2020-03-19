@@ -4,20 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 const Carousel = (props) => {
+
+    let slides = [1,2,3,4,5];
+
     return (
         <section className={styles.carouselSection}>
-            <div className={styles.carousel}>
+            <div className={props.switchImage(props.currentSlide)}>
                 <div className={styles.contentContainer}>
                     <h1>Control and manage any device with cloud solutions</h1>
                     <p>Improve business performance and the user experience with the right mix of IoT technology and processes</p>
                     <button type='button'>View more</button>
                 </div>
                 <div className={styles.dotsContainer}>
-                    <div className={styles.dot}></div>
-                    <div className={styles.dot}></div>
-                    <div className={styles.dot}></div>
-                    <div className={styles.dot}></div>
-                    <div className={styles.dot}></div>
+                    {slides.map(s => {
+                    return <div className={props.currentSlide === s ? styles.dotActive : styles.dot}
+                        onClick={() => { props.onSlideChange(s) }}></div>
+                    })}
                 </div>
             </div>
             <div className={styles.salesContainer}>

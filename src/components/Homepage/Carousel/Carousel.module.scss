@@ -11,7 +11,7 @@
         padding: 26px 55px 28px;
     }
 
-    .carousel {
+    .carousel1 {
         background-image: url(../../../assets/images/slider-1.png);
         max-width: 870px;
         min-width: 658px;
@@ -21,11 +21,16 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        opacity: 0;
+        transition: 1s;
+        animation: show 1s 1;
+        animation-fill-mode: forwards;
 
         .contentContainer {
-            max-width: 580px;
+            max-width: 746px;
+            width: 100%;
             height: 336px;
-            margin: 67px 10px 0px 62px;
+            margin: 67px 62px 0px;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -38,6 +43,7 @@
                 font-family: 'Myriad Pro Bold';
                 font-size: 47px;
                 line-height: 1.25;
+                max-width: 570px;
                 margin: 0;
                 margin-left: -4px;
             }
@@ -46,7 +52,7 @@
                 font-weight: 400;
                 max-width: 340px;
                 line-height: 1.25;
-                margin-top: 70px;
+                margin-top: 68px;
             }
 
             button {
@@ -62,20 +68,30 @@
         }
 
         .dotsContainer {
-            width: 104px;
-            height: 8px;
+            width: 120px;
+            height: 14px;
             display: flex;
             align-self: center;
-            justify-content: space-between;
-            margin-left: 32px;
-            margin-bottom: 48px;
-
+            margin-bottom: 45px;
             .dot {
                 background-color: white;
                 opacity: 0.5;
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
+                margin: auto;
+                margin-left: 8px;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            .dotActive {
+                @extend .dot;
+                background-color: transparent;
+                opacity: 1;
+                border: 3px solid white;
+                margin-left: 5px;
+                margin-right: 5px;
             }
         }
 
@@ -86,8 +102,32 @@
         //     object-position: 0 0;
         //     border-radius: 5px;
         // }
-
     }
+
+    .carousel2 {
+        @extend .carousel1;
+        background-image: url(../../../assets/images/slider-2.png);
+
+        .contentContainer {
+            align-items: center;
+            text-align: center;
+
+            h1 {
+                margin: 0;
+            }
+        }
+    }
+
+    .carousel3 {
+        @extend .carousel1;
+        background-image: url(../../../assets/images/slider-3.png);
+
+        .contentContainer {
+            align-items: flex-end;
+            text-align: right;
+        }
+    }
+
 
     .salesContainer {
         width: 270px;
@@ -172,5 +212,14 @@
                 margin-left: -12px;
             }
         }
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
     }
 }

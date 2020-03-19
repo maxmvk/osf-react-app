@@ -3,13 +3,13 @@
 .popularItemsSection {
     box-sizing: border-box;
     background-color: $primary-grey;
-    padding: 85px 15px 58px;
+    padding: 85px 15px 58px 15px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
   
     @media (min-width: 650px) {
-        padding: 85px 55px 58px;
+        padding: 85px 25px 58px 55px;
     }
 
     .titleContainer {
@@ -49,27 +49,103 @@
     }
 
     .itemsContainer {
-        max-width: 1170px;
+        max-width: 1200px;
         min-width: 768px;
         min-height: 395px;
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
 
         div {
             background-color: white;
             width: 270px;
             height: 365px;
+            text-align: center;
             border-radius: 5px;
             margin-bottom: 30px;
+            margin-right: 30px;
+            overflow: hidden;
+
+            h5{
+                display: table-cell;
+                vertical-align: middle;
+                color: #2c3e50;
+                padding-left: 50px;
+                width: 170px;
+                height: 65px;
+                line-height: 1.2;
+                font-weight: 400;
+                font-size: 15px;
+                margin: 0 auto;
+            }
+
+            p {
+                color: #011847;
+                font-size: 14px;
+                margin: 0 auto;
+            }
+
+            &:first-child {
+
+                h5 {
+                    width: 234px;
+                    color: $text-grey;
+                    padding-left: 17px;
+                }
+            }
+        }
+
+        .itemImage {
+            width: 271px;
+            height: 260px;
+        }
+
+        .imgGradient {
+            background: linear-gradient(rgba(220, 89, 135, 0.8), rgba(103, 91, 153, 0.8)),
+                        url(../../../assets/images/img-gradient.png);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            p {
+                text-align: start;
+                color: white;
+                width: 170px;
+                line-height: 1.5;
+                font-weight: 300;
+                font-size: 16px;
+                margin: 0;
+                padding-left: 30px;
+                padding-bottom: 20px;
+            }
+
+            span {
+                text-align: start;
+                color: white;
+                width: 170px;
+                font-weight: 400;
+                font-size: 14px;
+                margin: 0;
+                padding-left: 30px;
+                padding-bottom: 36px;
+
+                .comment {
+                    color: $primary-green;
+                    font-size: 24px;
+                    margin-right: 14px;
+                }
+            }
         }
     }
 
     .buttonContainer {
+        max-width: 1170px;
+        width: 100%;
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-start;
         margin-top: 20px;
 
         button {
@@ -81,10 +157,19 @@
             color: #ffffff;
             font-size: 14px;
             text-transform: uppercase;
+            text-align: center;
             background-color: transparent;
-            margin: auto;
             outline: none;
+            display: flex;
+            justify-content: center;
+            margin: auto;
             cursor: pointer;
+
+            div {
+                font-size: 15px;
+                margin-left: 25px;
+                margin-right: -38px;
+            }
         }
     }
 }

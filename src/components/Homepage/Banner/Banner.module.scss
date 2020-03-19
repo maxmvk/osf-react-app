@@ -1,0 +1,33 @@
+@import '../../../index.scss';
+
+.banner {
+    background-image: url(../../../assets/images/banner.png);
+    background-position: 80% 50%;
+    box-sizing: border-box;
+    height: 445px;
+    padding: 145px 15px 155px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  
+    @media (min-width: 650px) {
+        padding: 145px 55px 155px;
+    }
+
+    h1 {
+        font-size: 47px;
+        font-weight: 900;
+        line-height: 1.25;
+        margin: auto;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 340px;
+        line-height: 1.25;
+        margin: auto;
+        text-align: center;
+    }
+}
