@@ -8,6 +8,7 @@ const Navbar = (props) => {
         <nav className={styles.nav}>
             <div onMouseOver={() => { props.toogleDropdownServices(true) }}
                  onMouseLeave={() => { props.toogleDropdownServices(false) }}
+                 onClick={() => { props.toogleDropdownServices(!props.isDropdownServices) }}
                  className={styles.item}>
                  Services
                  <span>▼</span>

@@ -37,7 +37,6 @@
         align-items: flex-end;
 
         .column {
-            color: white;
             text-transform: none;
             font-size: 15px;
             font-weight: 400;
@@ -45,6 +44,15 @@
 
             div {
                 margin-top: 14px;
+
+                a {
+                    font-weight: 400;
+                    color: white;
+                }
+
+                a:hover {
+                    color: #acacac;
+                }
             }
 
             .category {

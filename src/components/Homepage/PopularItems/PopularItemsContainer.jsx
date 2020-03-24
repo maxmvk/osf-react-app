@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setProducts } from '../../../redux/products-reducer';
+import { setProducts, toogleIsHover } from '../../../redux/products-reducer';
+import { increaseWishCount, increaseProductCount } from '../../../redux/header-reducer';
 import * as axios from 'axios';
 import PopularItems from './PopularItems';
 
@@ -13,8 +14,15 @@ class PopularItemsContainer extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return (
-            <PopularItems products={this.props.products} onAddProducts={this.onAddProducts} />
+            <PopularItems products={this.props.products} 
+                          onAddProducts={this.onAddProducts} 
+                          toogleIsHover={this.props.toogleIsHover}
+                          wishCount={this.props.wishCount}
+                          increaseWishCount={this.props.increaseWishCount}
+                          productCount={this.props.productCount}
+                          increaseProductCount={this.props.increaseProductCount}/>
         )
     }
 }
@@ -22,7 +30,9 @@ class PopularItemsContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         products: state.productsState.products,
+        wishCount: state.headerState.wishCount,
+        productCount: state.headerState.productCount
     }
 }
 
-export default connect(mapStateToProps, { setProducts })(PopularItemsContainer);
+export default connect(mapStateToProps, { setProducts, toogleIsHover, increaseWishCount, increaseProductCount })(PopularItemsContainer);

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Carousel.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Carousel = (props) => {
 
@@ -13,7 +14,7 @@ const Carousel = (props) => {
                 <div className={styles.contentContainer}>
                     <h1>Control and manage any device with cloud solutions</h1>
                     <p>Improve business performance and the user experience with the right mix of IoT technology and processes</p>
-                    <button type='button'>View more</button>
+                    <NavLink to="/category-services"><button type='button'>View more</button></NavLink>
                 </div>
                 <div className={styles.dotsContainer}>
                     {slides.map(s => {

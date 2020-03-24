@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
 
-const NavIcons = () => {
+const NavIcons = (props) => {
     return (
         <div className={styles.navIcons}>
             <div><FontAwesomeIcon icon={faSearch} flip="horizontal" /></div>
             <div><FontAwesomeIcon icon={faUser} /></div>
-            <div><FontAwesomeIcon icon={faHeart} /><span>1</span></div>
-            <div><FontAwesomeIcon icon={faShoppingBag} /><span>2</span></div>
+            <div><FontAwesomeIcon icon={faHeart} />{props.wishCount !== 0? <span>{props.wishCount}</span> : null}</div>
+            <div><FontAwesomeIcon icon={faShoppingBag} />{props.productCount !== 0?<span>{props.productCount}</span> : null}</div>
         </div>
     )
 }

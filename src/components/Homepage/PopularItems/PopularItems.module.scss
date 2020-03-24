@@ -58,12 +58,63 @@
         justify-content: flex-start;
         flex-wrap: wrap;
 
-        div {
+        .test {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .itemHover {
+            background: linear-gradient(rgba(46, 211, 162, 0.9),rgba(28, 193, 103, 0.9));
+            width: 270px;
+            height: 365px;
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+
+            .add {
+                padding: 0;
+                border: none;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                color: #23c46e;
+                font-size: 32px;
+                text-align: center;
+                background-color: white;
+                outline: none;
+                cursor: pointer;
+                z-index: 11;
+                margin-top: 135px;
+            }
+
+            .wish {
+                padding: 0;
+                border: none;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                color: #e73c68;
+                font-size: 30px;
+                text-align: center;
+                background-color: white;
+                outline: none;
+                cursor: pointer;
+                z-index: 11;
+                margin-left: 22px;
+                margin-top: 135px;
+            }
+        }
+
+        .item {
             background-color: white;
             width: 270px;
             height: 365px;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 7px;
             margin-bottom: 30px;
             margin-right: 30px;
             overflow: hidden;
@@ -103,11 +154,33 @@
         }
 
         .imgGradient {
-            background: linear-gradient(rgba(220, 89, 135, 0.8), rgba(103, 91, 153, 0.8)),
-                        url(../../../assets/images/img-gradient.png);
+            background: transparent;
+            width: 270px;
+            height: 365px;
+            text-align: center;
+            border-radius: 7px;
+            margin-bottom: 30px;
+            margin-right: 30px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+
+            .gradient {
+                background: linear-gradient(rgba(220, 89, 135, 0.8), rgba(103, 91, 153, 0.8));
+                width: 270px;
+                height: 365px;
+                border-radius: 7px;
+                position: absolute;
+                z-index: 9;
+            }
+
+            .itemImage {
+                width: 270px;
+                height: 365px;
+                border-radius: 7px;
+                position: absolute;
+            }
 
             p {
                 text-align: start;
@@ -119,6 +192,7 @@
                 margin: 0;
                 padding-left: 30px;
                 padding-bottom: 20px;
+                z-index: 10;
             }
 
             span {
@@ -130,6 +204,7 @@
                 margin: 0;
                 padding-left: 30px;
                 padding-bottom: 36px;
+                z-index: 10;
 
                 .comment {
                     color: $primary-green;

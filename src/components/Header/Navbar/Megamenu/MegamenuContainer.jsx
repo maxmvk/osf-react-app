@@ -7,7 +7,7 @@ class MegamenuContainer extends React.Component {
 
     render() {
         return <>
-            { this.props.isDropdownServices ? <Megamenu /> : null }
+            { this.props.isDropdownServices ? <Megamenu toogleIsDropdownServices = {this.props.toogleIsDropdownServices} isDropdownServices = {this.props.isDropdownServices}/> : null }
         </>
     }
 }

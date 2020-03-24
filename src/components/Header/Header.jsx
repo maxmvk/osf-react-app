@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import Logo from './Logo/Logo';
-import NavIcons from './NavIcons/NavIcons';
 import NavbarContainer from './Navbar/NavbarContainer';
+import NavIconsContainer from './NavIcons/NavIconsContainer';
 
 const Header = (props) => {
     return (
@@ -11,7 +11,7 @@ const Header = (props) => {
                 <span className={styles.toggle}>☰</span>
                 <Logo />
                 <NavbarContainer />
-                <NavIcons />
+                <NavIconsContainer />
             </div>
         </header>
     )
