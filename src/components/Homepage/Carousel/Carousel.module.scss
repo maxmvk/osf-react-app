@@ -4,17 +4,16 @@
     box-sizing: border-box;
     height: 559px;
     background-color: rgb(255, 255, 255);
-    padding: 26px 15px 28px;
+    padding: 26px 55px 28px;
     display: flex;
   
-    @media (min-width: 650px) {
-        padding: 26px 55px 28px;
+    @media (max-width: 768px) {
+        padding: 26px 15px 28px;
     }
 
     .carousel1 {
         background-image: url(../../../assets/images/slider-1.png);
         max-width: 870px;
-        min-width: 658px;
         width: 100%;
         height: 100%;
         border-radius: 5px;
@@ -26,11 +25,17 @@
         animation: show 1s 1;
         animation-fill-mode: forwards;
 
+        @media (max-width: 768px) {
+            background-position: 100% 0%;
+            background-size: cover;
+            height: 472px;
+        }
+
         .contentContainer {
-            max-width: 746px;
+            box-sizing: border-box;
             width: 100%;
-            height: 336px;
-            margin: 67px 62px 0px;
+            height: 403px;
+            padding: 67px 62px 0px;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -39,6 +44,11 @@
             color: white;
             font-size: 14px;
 
+            @media (max-width: 768px) {
+                align-items: center;
+                padding: 28px 15px 0px;
+            }
+
             h1 {
                 font-family: 'Myriad Pro Bold';
                 font-size: 47px;
@@ -46,6 +56,13 @@
                 max-width: 570px;
                 margin: 0;
                 margin-left: -4px;
+
+                @media (max-width: 768px) {
+                    max-width: 520px;
+                    font-size: 27px;
+                    margin: 0;
+                    align-self: center;
+                }
             }
 
             p {
@@ -53,6 +70,20 @@
                 max-width: 340px;
                 line-height: 1.25;
                 margin-top: 68px;
+
+                @media (max-width: 768px) {
+                    margin-top: 10px;
+                    max-width: 510px;
+                    align-self: center;
+                }
+
+                span {
+                    display: none;
+    
+                    @media (max-width: 768px) {
+                        display: block;
+                    }
+                }
             }
 
             button {
@@ -74,6 +105,11 @@
             display: flex;
             align-self: center;
             margin-bottom: 45px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 15px;
+            }
+
             .dot {
                 background-color: white;
                 opacity: 0.5;
@@ -116,6 +152,10 @@
             h1 {
                 margin: 0;
             }
+
+            @media (max-width: 768px) {
+                text-align: start;
+            }
         }
     }
 
@@ -126,6 +166,15 @@
         .contentContainer {
             align-items: flex-end;
             text-align: right;
+
+            h1 {
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                align-items: center;
+                text-align: start;
+            }
         }
     }
 
@@ -138,6 +187,10 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+
+        @media (max-width: 980px) {
+            display: none;
+        }
 
         .sales {
             background-image: url(../../../assets/images/sales-img.png);

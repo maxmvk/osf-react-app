@@ -1,0 +1,96 @@
+@import '../../index.scss';
+
+.cookiesWrap {
+    box-sizing: border-box;
+    height: 148px;
+    max-width: 1280px;
+    width: 100%;
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    padding-left: 55px;
+    padding-right: 55px;
+    transform: translateX(-50%);
+    z-index: 112;
+
+    .cookiesPolicy {
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 8px;
+        height: 148px;
+        max-width: 1170px;
+        width: 100%;
+        padding: 10px 11px 17px 24px;
+        color: $text-grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .column {
+            height: 121px;
+            width: 840px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: auto 0;
+
+            &:last-child {
+                width: 164px;
+            }
+        }
+
+        h5 {
+            color: $primary-green;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.25;
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.75;
+            margin: 0;
+
+            span {
+                color: $primary-green;
+                font-weight: 400;
+            }
+        }
+
+        span {
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        button {
+            width: 148px;
+            height: 36px;
+            padding: 8px 16px 8px 16px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: $primary-green;
+            outline: none;
+            margin: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.overlay {
+    background-color: #000;
+    position: fixed;
+    z-index: 111;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}

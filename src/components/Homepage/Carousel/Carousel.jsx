@@ -13,7 +13,12 @@ const Carousel = (props) => {
             <div className={props.switchImage(props.currentSlide)}>
                 <div className={styles.contentContainer}>
                     <h1>Control and manage any device with cloud solutions</h1>
-                    <p>Improve business performance and the user experience with the right mix of IoT technology and processes</p>
+                    <p>
+                        Improve business performance and the user experience with the right mix of IoT technology and processes <br/>
+                        <span>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
+                    veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
+                    sit aspernatur aut odit aut fugit, sed</span>
+                    </p>
                     <NavLink to="/category-services"><button type='button'>View more</button></NavLink>
                 </div>
                 <div className={styles.dotsContainer}>

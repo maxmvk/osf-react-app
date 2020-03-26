@@ -2,7 +2,10 @@ import React from 'react';
 import styles from './ProductDetailedPage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
-import productImg from '../../assets/images/product-12.png'
+import productImg1 from '../../assets/images/product-15.png'
+import productImg2 from '../../assets/images/product-16.png'
+import productImg3 from '../../assets/images/product-17.png'
+import productImg4 from '../../assets/images/product-18.png'
 import preview1 from '../../assets/images/PG.10216885.JJ169XX.PZ.jpg'
 import preview2 from '../../assets/images/PG.10216885.JJ169XX.BZ.jpg'
 import preview3 from '../../assets/images/PG.10216885.JJ8UTXX.BZ.jpg'
@@ -14,6 +17,15 @@ const ProductDetailedPage = (props) => {
 
     let previews = [preview1, preview2, preview3, preview4];
     let tabs = ['Description','Additional Information','Reviews (3)'];
+
+    let newQuantity = React.createRef();
+
+    let onQuantityChange = () => {
+        let quantity = Number(newQuantity.current.value);
+        if ((quantity === 0)||(!quantity === false)) {
+            props.setQuantity(quantity);
+        }
+    }
 
     return (
         <div className={styles.productDetailedWrapper}>
@@ -56,7 +68,7 @@ const ProductDetailedPage = (props) => {
                                     {props.quantity > 0 ?
                                     <span onClick={() => { props.decreaseQuantity() }}>—</span>
                                     : <span>—</span>}
-                                    {props.quantity}
+                                    <input type="text" maxLength="2" onChange={ onQuantityChange } ref={newQuantity} value={props.quantity}/>
                                     <span onClick={() => { props.increaseQuantity() }}>+</span>
                                 </button>
                                 <button onClick={() => { props.addQuantityProducts() }} className={styles.add}>Add to cart</button>
@@ -118,24 +130,24 @@ const ProductDetailedPage = (props) => {
                 </div>
                 <div className={styles.itemsContainer}>
                     <div className={styles.item}>
-                        <img src={productImg} alt="" className ={styles.itemImage} />
+                        <img src={productImg1} alt="" className ={styles.itemImage} />
+                        <h5>Kristina Dam Oak Table With White Marble Top</h5>
+                        <p>$ 799.55</p>
+                    </div>
+                    <div className={styles.item}>
+                        <img src={productImg2} alt="" className ={styles.itemImage} />
+                        <h5>CH445 Wing Chair on  SUITE NY</h5>
+                        <p>$ 2195.55</p>
+                    </div>
+                    <div className={styles.item}>
+                        <img src={productImg3} alt="" className ={styles.itemImage} />
                         <h5>Activate Facial Mask and Charcoal Soap</h5>
                         <p>$ 129.55</p>
                     </div>
                     <div className={styles.item}>
-                        <img src={productImg} alt="" className ={styles.itemImage} />
-                        <h5>CH445 Wing Chair on  SUITE NY</h5>
-                        <p>$ 330.55</p>
-                    </div>
-                    <div className={styles.item}>
-                        <img src={productImg} alt="" className ={styles.itemImage} />
-                        <h5>Activate Facial Mask and Charcoal Soap</h5>
-                        <p>$ 129.55</p>
-                    </div>
-                    <div className={styles.item}>
-                        <img src={productImg} alt="" className ={styles.itemImage} />
-                        <h5>CH445 Wing Chair on  SUITE NY</h5>
-                        <p>$ 330.55</p>
+                        <img src={productImg4} alt="" className ={styles.itemImage} />
+                        <h5>Cocktail Table Walnut  | YES</h5>
+                        <p>$ 629.55</p>
                     </div>
                 </div>
             </section>

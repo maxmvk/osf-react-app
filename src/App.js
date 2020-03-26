@@ -7,11 +7,15 @@ import Homepage from './components/Homepage/Homepage';
 import Page404 from './components/Page404/Page404';
 import CategoryServicesContainer from './components/CategoryServices/CategoryServicesContainer';
 import ProductDetailedPageContainer from './components/ProductDetailedPage/ProductDetailedPageContainer';
+import CookiesPolicyContainer from './components/CookiesPolicy/CookiesPolicyContainer';
+import LoginModalContainer from './components/LoginModal/LoginModalContainer';
 
 const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
+      <CookiesPolicyContainer />
+      <LoginModalContainer />
       <div className="app-wrapper-content">
         <Route exact path="/" render={() => <Homepage />} />
         <Route exact path="/not-found-404" render={() => <Page404 />} />

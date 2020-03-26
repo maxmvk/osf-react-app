@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increaseQuantity, decreaseQuantity, addQuantityProducts } from '../../redux/header-reducer';
+import { increaseQuantity, decreaseQuantity, addQuantityProducts, setQuantity } from '../../redux/header-reducer';
 import { setCurrentSlide, setCurrentTab, setReadMore } from '../../redux/carousel-reducer';
 import ProductDetailedPage from './ProductDetailedPage';
 
@@ -30,7 +30,8 @@ class ProductDetailedPageContainer extends React.Component {
                                  currentTab={this.props.currentTab}
                                  onTabChange={this.onTabChange}
                                  setReadMore={this.props.setReadMore}
-                                 isReadMore={this.props.isReadMore} />
+                                 isReadMore={this.props.isReadMore}
+                                 setQuantity={this.props.setQuantity} />
         )
     }
 }
@@ -45,4 +46,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { increaseQuantity, decreaseQuantity, addQuantityProducts, setCurrentSlide, setCurrentTab, setReadMore })(ProductDetailedPageContainer);
+export default connect(mapStateToProps, { increaseQuantity, decreaseQuantity, addQuantityProducts, setCurrentSlide, setCurrentTab, setReadMore, setQuantity })(ProductDetailedPageContainer);

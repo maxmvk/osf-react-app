@@ -200,6 +200,16 @@
                         justify-content: space-between;
                         margin: auto;
                         margin-left: 0;
+
+                        input {
+                            width: 20px;
+                            height: 33px;
+                            font-size: 14px;
+                            color: $text-grey;
+                            text-align: center;
+                            border: none;
+                            outline: none;
+                        }
     
                         span {
                             height: 36px;
