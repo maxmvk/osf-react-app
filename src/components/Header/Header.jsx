@@ -8,7 +8,6 @@ const Header = (props) => {
     return (
         <header className={styles.header}>
             <div className={styles.headerContainer}>
-                <span className={styles.toggle}>☰</span>
                 <Logo />
                 <NavbarContainer />
                 <NavIconsContainer />

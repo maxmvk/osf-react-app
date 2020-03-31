@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './Products.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import ProductsSlider from './Slider/ProductsSlider';
 
-const Products = (props) => {
+const Products = () => {
     return (
         <section className={styles.productsSection}>
             <h3>Featured Products</h3>

@@ -5,12 +5,21 @@
     box-sizing: border-box;
     max-width: 1280px;;
     height: 344px;
-    padding: 37px 15px;
+    padding: 37px 55px;
     justify-content: space-between;
     align-items: flex-start;
 
-    @media (min-width: 650px) {
-        padding: 37px 55px;
+    @media (max-width: 1150px) {
+        margin-bottom: 54px;
+    }
+
+    @media (max-width: 980px) {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 15px 65px;
     }
 
     .footerContainer {
@@ -20,6 +29,23 @@
         margin: 0;
         justify-content: space-between;
         align-items: flex-start;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .footerContainerMobile {
+        display: none;
+
+        @media (max-width: 768px) {
+            @include flexAuto;
+            height: 100%;
+            max-width: 990px;
+            margin: 0;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     .column {
@@ -32,6 +58,11 @@
         min-width: 120px;
         padding: 0;
         margin: 0;
+
+        @media (max-width: 768px) {
+            width: 190px;
+            font-size: 13px;
+        }
 
         &M {
             @extend .column;
@@ -58,6 +89,10 @@
 
             &:first-child {
                 margin-top: 0;
+
+                @media (max-width: 768px) {
+                    margin-top: 13px;
+                }
             }
         }
 
@@ -69,20 +104,59 @@
             }
         }
 
-        .title {
-            color: #333333;
-            font-weight: 900;
-            margin-bottom: -9px;
+        &G {
+            @extend .column;
+            color: $text-grey;
 
-            &M {
-                @extend .title;
-                margin-bottom: 23px;
-                margin-top: 0;
+            li {
+                margin-top: 16px;
+            }
+
+            a {
+                color: $text-grey;
             }
         }
+    }
 
-        .copyright {
-            padding-bottom: 13px;
+    .title {
+        color: #333333;
+        font-weight: 900;
+        margin-bottom: -9px;
+        font-size: 12.5px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &M {
+            @extend .title;
+            margin-bottom: 23px;
+            margin-top: 0;
+
+            @media (max-width: 768px) {
+                margin-bottom: 0px;
+                margin-top: 23px;
+            }
+        }
+    }
+
+    span {
+        font-size: 9px;
+        opacity: 0.7;
+    }
+
+    .copyright {
+        padding-bottom: 13px;
+        color: $text-grey;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1.5;
+
+        @media (max-width: 768px) {
+            padding-bottom: 20px;
         }
     }
 
@@ -101,6 +175,11 @@
 
         a:hover {
             color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            align-self: center;
+            margin-top: 23px;
         }
     }
 }

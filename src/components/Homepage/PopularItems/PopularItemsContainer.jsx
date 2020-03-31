@@ -1,28 +1,76 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setProducts, toogleIsHover } from '../../../redux/products-reducer';
-import { increaseWishCount, increaseProductCount } from '../../../redux/header-reducer';
+import { setProducts, toogleAdded, setCurrentProductSlide } from '../../../redux/products-reducer';
+import { increaseWishCount, increaseProductCount, setCartProducts, setSubtotal } from '../../../redux/cart-reducer';
+import { setCookies } from '../../../redux/cookie-reducer';
 import * as axios from 'axios';
 import PopularItems from './PopularItems';
+import Cookies from 'universal-cookie';
 
 class PopularItemsContainer extends React.Component {
 
+    componentDidMount() {
+        if(this.props.cookies.get('cart-products')) {
+            this.props.cookies.get('cart-products').cartProducts.map(p => this.props.toogleAdded(p.id))
+        }
+    }
+
     onAddProducts = () => {
-        axios.get(`/products-list.json`).then(response => {
+        axios.get('/products-list.json').then(response => {
             this.props.setProducts(response.data.products)
         })
     }
 
+    onAddToCart = (productId, productName, productPrice, productPhoto) => {
+        const cookies = new Cookies();
+        if(!this.props.cookies.get('cart-products')) {
+            cookies.set('cart-products', {
+                cartProducts: [{id: productId, quantity: 1, name: productName,  price: productPrice,  photo: productPhoto}]
+            })
+        }
+        else {
+            cookies.set('cart-products', {
+                cartProducts: [
+                    ...this.props.cookies.get('cart-products').cartProducts, 
+                    {id: productId, quantity: 1, name: productName,  price: productPrice,  photo: productPhoto}
+                ]
+            })
+        }
+        this.props.toogleAdded(productId);
+        this.props.setCookies(cookies);
+        this.props.setCartProducts(this.props.cookies.get('cart-products').cartProducts)
+        this.props.increaseProductCount(1);
+        this.props.setSubtotal(productPrice);
+    }
+
+    onChangeProductCount = (productId, productPrice) => {
+        const cookies = new Cookies();
+        cookies.set('cart-products', {
+            cartProducts: this.props.cookies.get('cart-products').cartProducts.map(p => {
+                if(p.id === productId) {
+                    return {...p, quantity: ++p.quantity}
+                }
+                return p;
+            })
+        })
+        this.props.setCookies(cookies);
+        this.props.setCartProducts(this.props.cookies.get('cart-products').cartProducts)
+        this.props.increaseProductCount(1);
+        this.props.setSubtotal(productPrice);
+    }
+
     render() {
-        console.log(this.props)
         return (
-            <PopularItems products={this.props.products} 
+            <PopularItems products={this.props.products}  
+                          currentProductSlide={this.props.currentProductSlide}
+                          setCurrentProductSlide={this.props.setCurrentProductSlide}
                           onAddProducts={this.onAddProducts} 
-                          toogleIsHover={this.props.toogleIsHover}
                           wishCount={this.props.wishCount}
                           increaseWishCount={this.props.increaseWishCount}
                           productCount={this.props.productCount}
-                          increaseProductCount={this.props.increaseProductCount}/>
+                          onChangeProductCount={this.onChangeProductCount}
+                          onAddToCart={this.onAddToCart}
+                          toogleAdded={this.props.toogleAdded}/>
         )
     }
 }
@@ -30,9 +78,13 @@ class PopularItemsContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         products: state.productsState.products,
-        wishCount: state.headerState.wishCount,
-        productCount: state.headerState.productCount
+        currentProductSlide: state.productsState.currentProductSlide,
+        wishCount: state.cartState.wishCount,
+        productCount: state.cartState.productCount,
+        cookies: state.cookieState.cookies,
+        subtotal: state.cartState.subtotal
     }
 }
 
-export default connect(mapStateToProps, { setProducts, toogleIsHover, increaseWishCount, increaseProductCount })(PopularItemsContainer);
+export default connect(mapStateToProps, { setProducts, toogleAdded, increaseWishCount, increaseProductCount,
+     setCurrentProductSlide, setCookies, setCartProducts, setSubtotal })(PopularItemsContainer);

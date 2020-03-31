@@ -9,7 +9,7 @@ const CookiesPolicy = (props) => {
                     <div className={styles.column}>
                         <h5>This website uses cookies</h5>
                         <p>
-                            OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance <br/>
+                            OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance 
                             and interaction with social media offering publicity tailored to your interests. If you continue browsing, we consider that you accept its use.
                             You can expand this information consulting our <span>Cookies Policy Page</span>.
                         </p>

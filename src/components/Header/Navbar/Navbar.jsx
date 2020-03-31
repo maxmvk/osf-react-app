@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Navbar.module.scss';
-import { NavLink } from 'react-router-dom';
 import MegamenuContainer from './Megamenu/MegamenuContainer';
 
 const Navbar = (props) => {
@@ -8,7 +7,6 @@ const Navbar = (props) => {
         <nav className={styles.nav}>
             <div onMouseOver={() => { props.toogleDropdownServices(true) }}
                  onMouseLeave={() => { props.toogleDropdownServices(false) }}
-                 onClick={() => { props.toogleDropdownServices(!props.isDropdownServices) }}
                  className={styles.item}>
                  Services
                  <span>▼</span>
@@ -19,6 +17,7 @@ const Navbar = (props) => {
             <div className={styles.item}>Contact Us</div>
             <div className={styles.item}>EN<span>▼</span></div>
             <div className={styles.item}>$ US<span>▼</span></div>
+            <div className={styles.toggle}><span onClick={() => { props.toogleDropdownServices(!props.isDropdownServices) }}>{props.isDropdownServices? '✕' : '☰'}</span><MegamenuContainer /></div>
         </nav>
     )
 }

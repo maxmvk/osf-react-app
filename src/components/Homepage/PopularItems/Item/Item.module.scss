@@ -5,9 +5,12 @@
     height: 365px;
     text-align: center;
     border-radius: 7px;
-    margin-bottom: 30px;
-    margin-right: 30px;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        width: 290px;
+        margin: 0;
+    }
 
     h5{
         display: table-cell;
@@ -20,6 +23,10 @@
         font-weight: 400;
         font-size: 15px;
         margin: 0 auto;
+
+        @media (max-width: 768px) {
+            width: 190px;
+        }
     }
 
     p {
@@ -31,6 +38,10 @@
     .itemImage {
         width: 270px;
         height: 260px;
+
+        @media (max-width: 768px) {
+            width: 290px;
+        }
     }
 
     .buyContainer {
@@ -48,20 +59,27 @@
             margin: 0 auto;
             align-self: center;
             margin-left: 18px;
+
+            a {
+                color: #24c36c; 
+            }
         }
 
         button {
+            @include buttonOptions;
             padding: 0;
-            border: none;
             border-left: 2px solid #e5e5e5;
-            padding-left: 17px;
-            padding-right: 11px;
-            outline: none;
-            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 21px;
             background-color: transparent;
             font-size: 14.5px;
             font-weight: 700;
-            cursor: pointer;
+            border-radius: 0px 20px 20px 0px;
+
+            &:hover {
+                color: white;
+                background-color: $primary-green;
+            }
         }
     }
 
@@ -74,6 +92,11 @@
         z-index: 10;
         display: none;
         justify-content: center;
+        opacity: 0;
+        transition: 0.5s;
+        animation: show 0.5s 1;
+        animation-fill-mode: forwards;
+        
 
         .add {
             padding: 0;
@@ -111,5 +134,9 @@
 
     &:hover .itemHover {
         display: flex;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 }

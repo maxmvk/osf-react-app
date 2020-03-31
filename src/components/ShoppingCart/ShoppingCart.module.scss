@@ -1,0 +1,556 @@
+@import '../../index.scss';
+
+.shoppingCartWrapper {
+    width: 100%;
+    height: 100%;
+
+    .shoppingCart {
+        background-color: #f1edea;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        margin-top: 80px;
+        padding: 53px 55px 37px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        @media (max-width: 768px) {
+            padding: 23px 15px 20px;
+            margin-top: 62px;
+        }
+
+        .breadcrumbs {
+            max-width: 1170px;
+            width: 100%;
+            height: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+
+            div {
+                color: #bdc3c7;
+
+                &:nth-child(2) {
+                    padding-left: 14px;
+                    padding-right: 17px;
+                }
+            }
+
+            a {
+                color: $primary-green;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .active {
+                color: $text-grey;
+            }
+        }
+
+        .pageName {
+            max-width: 1170px;
+            width: 100%;
+            height: 65px;
+            margin-bottom: 38px;
+            margin-top: 17px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            @media (max-width: 768px) {
+                height: 40px;
+                margin-top: 31px;
+            }
+
+            div {
+                background-color: #e5e2df;
+                max-width: 396px;
+                width: 100%;
+                height: 2px;
+                margin: auto;
+                margin-left: 0;
+                margin-right: 30px;
+
+                &:last-child {
+                    margin: auto;
+                    margin-right: 0;
+                    margin-left: 30px;
+                }
+            }
+
+            h1 {
+                font-size: 48px;
+                font-weight: 900;
+                letter-spacing: -1px;
+                color: $text-grey;
+                margin: 0;
+                white-space: nowrap;
+                text-transform: uppercase;
+
+                @media (max-width: 768px) {
+                    font-size: 31px;
+                }
+            }
+        }
+
+        .contentContainer {
+            box-sizing: border-box;
+            background-color: white;
+            max-width: 1170px;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+    
+            @media (max-width: 768px) {
+                padding: 0px;
+            }
+
+            .productsContainer {
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                border-bottom: 2px solid #e8e2d6;
+                padding: 97px 100px 72px;
+
+                @media (max-width: 768px) {
+                    padding: 10px;
+                }
+
+                .product {
+                    max-width: 970px;
+                    width: 100%;
+                    min-height: 92px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    flex-wrap: wrap;
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                    }
+
+                    img {
+                        width: 96px;
+                        height: 92px;
+
+                        @media (max-width: 768px) {
+                            margin: auto;
+                        }
+                    }
+
+                    .details {
+                        width: 350px;
+                        height: 92px;
+                        margin-right: auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        @media (max-width: 768px) {
+                            width: 100%;
+                        }
+
+                        h5{
+                            color: $text-grey;
+                            padding-left: 20px;
+                            width: 100%;
+                            font-weight: 400;
+                            font-size: 15px;
+                            margin: 0;
+                            margin-top: 28px;
+
+                            @media (max-width: 768px) {
+                                text-align: center;
+                                margin: auto;
+                                padding-left: 0;
+                            }
+                        }
+                    
+                        p {
+                            color: #bdc3c7;
+                            font-size: 14px;
+                            padding-left: 22px;
+                            margin: 0;
+                            margin-bottom: 19px;
+                            
+                            @media (max-width: 768px) {
+                                margin: auto;
+                                padding-left: 0;
+                                margin-bottom: 20px;
+                            }
+
+                        }
+                    }
+
+                    .quantityContainer {
+                        max-width: 370px;
+                        width: 100%;
+                        height: 92px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        @media (max-width: 768px) {
+                            flex-direction: row;
+                            height: 40px;
+                            margin: auto;
+                        }
+
+                        .quantity {
+                            width: 110px;
+                            height: 40px;
+                            padding: 0;
+                            border: 2px solid #e8e2d6;
+                            border-radius: 20px;
+                            color: $text-grey;
+                            font-size: 14px;
+                            line-height: 36px;
+                            text-align: center;
+                            background-color: transparent;
+                            outline: none;
+                            display: flex;
+                            justify-content: space-between;
+                            margin: auto 0;
+
+                            @media (max-width: 920px) {
+                                margin: 0;
+                            }
+
+                            input {
+                                width: 20px;
+                                height: 33px;
+                                font-size: 14px;
+                                color: $text-grey;
+                                text-align: center;
+                                border: none;
+                                outline: none;
+                            }
+        
+                            span {
+                                height: 36px;
+                                line-height: 36px;
+                                width: 42px;
+                                font-size: 16px;
+                                font-weight: 900;
+                                color: #999999;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                border-radius: 20px 0px 0px 20px;
+                                @include transition;
+
+                                &:last-child {
+                                    border-radius: 0px 20px 20px 0px;
+                                }
+
+                                &:hover {
+                                    color: white;
+                                    background-color: $primary-green;
+                                }
+                            }
+                        }
+
+                        h3 {
+                            color: $text-grey;
+                            font-size: 30px;
+                            font-weight: 900;
+                            margin-top: 27px;
+                            margin-right: 20px;
+
+                            @media (max-width: 768px) {
+                                font-size: 20px;
+                                margin: auto;
+                            }
+                        }
+
+                        .delete {
+                            @extend .quantity;
+                            width: 28px;
+                            height: 28px;
+                            border-radius: 50%;
+                            color: #a2a09e;
+                            font-size: 16px;
+                            font-weight: 900;
+                            line-height: 12px;
+                            padding: 6px 7.5px 7px;
+                            margin-top: 30px;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $text-grey;
+                                border: 2px solid #999999;
+                            }
+
+                            @media (max-width: 768px) {
+                                margin: auto 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .paymentContainer {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                padding: 72px 100px 82px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                @media (max-width: 1000px) {
+                    padding: 10px;
+                    flex-direction: column;
+                }
+
+                .coupon {
+                    max-width: 347px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+
+                    @media (max-width: 1000px) {
+                        margin: auto;
+                    }
+
+                    input {
+                        max-width: 220px;
+                        width: 100%;
+                        height: 40px;
+                        box-sizing: border-box;
+                        padding: 11px 20px;
+                        border: 2px solid #e8e2d6;
+                        border-radius: 20px;
+                        color: $text-grey;
+                        font-size: 13px;
+                        font-weight: 700;
+                        background-color: transparent;
+                        outline: none;
+                        margin-right: 12px;
+                    }
+
+                    button {
+                        @include buttonOptions;
+                        width: 115px;
+                        height: 40px;
+                        padding: 8px 16px 8px 16px;
+                        border: 2px solid $primary-green;
+                        color: $primary-green;
+                        background-color: transparent;
+
+                        &:hover {
+                            color: white;
+                            background-color: $primary-green;
+                            border: none;
+                        }
+                    }
+                }
+                
+                .payment {
+                    max-width: 443px;
+                    width: 100%;
+                    height: 375px;
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 20px;
+
+                    @media (max-width: 1000px) {
+                        height: 100%;
+                        margin: auto;
+                        margin-top: 31px;
+                        padding-left: 0px;
+                    }
+
+                    .column {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+
+                        b {
+                            width: 243px;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            color: $text-grey;
+                            font-weight: 900;
+
+                            @media (max-width: 768px) {
+                                width: 120px;
+                            }
+                        }
+
+                        h2 {
+                            color: $text-grey;
+                            font-size: 48px;
+                            font-weight: 900;
+                            margin: 0;
+
+                            @media (max-width: 768px) {
+                                font-size: 30px;
+                            }
+                        }
+
+                        h6 {
+                            font-size: 14px;
+                            color: $text-grey;
+                            font-weight: 900;
+                            margin: 0;
+
+                            @media (max-width: 768px) {
+                                margin-left: 10px;
+                            }
+                        }
+
+                        .update {
+                            @include buttonOptions;
+                            width: 164px;
+                            height: 40px;
+                            padding: 8px 16px 8px 16px;
+                            border: 2px solid $primary-green;
+                            color: $primary-green;
+                            background-color: transparent;
+                            margin-right: 14px;
+
+                            &:hover {
+                                color: white;
+                                background-color: $primary-green;
+                                border: none;
+                            }
+
+                            @media (max-width: 768px) {
+                                margin: auto;
+                            }
+                        }
+                        
+                        .proceed {
+                            @include buttonOptions;
+                            width: 265px;
+                            height: 40px;
+                            padding: 8px 16px 8px 16px;
+                            color: white;
+                            background-color: $primary-green;
+
+                            &:hover {
+                                border: 2px solid $primary-green;
+                                color: $primary-green;
+                                background-color: transparent;
+                            }
+
+                            @media (max-width: 768px) {
+                                margin: auto;
+                                margin-top: 20px;
+                            }
+                        }
+
+                        .methods {
+                            width: 175px;
+                            height: 138px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            .dotsContainer {
+                                width: 18px;
+                                height: 135px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                .dot {
+                                    box-sizing: border-box;
+                                    width: 14px;
+                                    height: 14px;
+                                    padding: 3px;
+                                    border-radius: 50%;
+                                    border: 3px solid white;
+                                    background-color: transparent;
+                                    box-shadow: 0 0 0 2px #e8e2d6;
+                                    cursor: pointer;
+                                }
+
+                                .dotActive {
+                                    @extend .dot;
+                                    background-color: $primary-green;
+                                }
+                            }
+
+                            .textContainer {
+                                width: 146px;
+                                height: 138px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                margin-left: 10px;
+                            
+                                div {
+                                    width: 100%;
+                                    height: 18px;
+                                    display: flex;
+                                    flex-direction: row;
+
+                                    p {
+                                        font-size: 14px;
+                                        color: $text-grey;
+                                        font-weight: 700;
+                                        margin: 0;
+                                    }
+
+                                    b {
+                                        width: 50px;
+                                        font-size: 14px;
+                                        color: $text-grey;
+                                        font-weight: 900;
+                                        margin-left: 3px;
+                                    }
+                                }
+                            }
+                        }
+                        &:first-child {
+                            @media (max-width: 768px) {
+                                flex-direction: column;
+                            }
+                        }
+
+                        &:nth-child(n+2) {
+                            margin-top: 30px;
+                        }
+
+                        &:nth-child(2) {
+                            margin-top: 43px;
+
+                            b {
+                                font-size: 12.5px;
+                                font-weight: 400;
+                            }
+
+                            @media (max-width: 768px) {
+                                justify-content: flex-start;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-top: 52px;
+
+                            b {
+                                margin: auto 0;
+                                margin-top: 23px;
+
+                                @media (max-width: 768px) {
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

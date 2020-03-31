@@ -13,11 +13,34 @@
     transform: translateX(-50%);
     z-index: 112;
 
+    @media (max-width: 990px) {
+        height: 170px;
+    }
+
+    @media (max-width: 800px) {
+        height: 195px;
+    }
+
+    @media (max-width: 768px) {
+        height: 225px;
+        padding: 0;
+        bottom: 0px;
+    }
+
+    @media (max-width: 530px) {
+        height: 250px;
+    }
+
+    @media (max-width: 438px) {
+        height: 300px;
+    }
+
     .cookiesPolicy {
         background-color: white;
         box-sizing: border-box;
         border-radius: 8px;
-        height: 148px;
+        min-height: 148px;
+        height: 100%;
         max-width: 1170px;
         width: 100%;
         padding: 10px 11px 17px 24px;
@@ -26,16 +49,36 @@
         flex-direction: row;
         justify-content: space-between;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 10px 15px 27px 15px;
+            border-radius: 0px;
+        }
+
         .column {
-            height: 121px;
-            width: 840px;
+            height: 100%;
+            max-width: 840px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             margin: auto 0;
 
+            @media (max-width: 768px) {
+                justify-content: flex-start;
+            }
+
             &:last-child {
                 width: 164px;
+                padding-left: 10px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    flex-direction: row;
+                    padding-left: 0px;
+                    height: 40px;
+                    justify-content: space-between;
+                    align-items: center;
+                }
             }
         }
 
@@ -54,6 +97,10 @@
             line-height: 1.75;
             margin: 0;
 
+            @media (max-width: 768px) {
+                margin-top: 10px;
+            }
+
             span {
                 color: $primary-green;
                 font-weight: 400;
@@ -64,22 +111,26 @@
             font-weight: 700;
             cursor: pointer;
             margin-left: auto;
+
+            @media (max-width: 768px) {
+                order: 1;
+            }
         }
 
         button {
+            @include buttonOptions;
             width: 148px;
             height: 36px;
             padding: 8px 16px 8px 16px;
-            border: none;
-            border-radius: 20px;
             color: white;
-            font-size: 14px;
-            text-align: center;
-            text-transform: uppercase;
             background-color: $primary-green;
-            outline: none;
             margin: 0;
-            cursor: pointer;
+
+            &:hover {
+                border: 2px solid $primary-green;
+                color: $primary-green;
+                background-color: transparent;
+            }
         }
     }
 }

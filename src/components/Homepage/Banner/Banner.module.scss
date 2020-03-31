@@ -5,14 +5,20 @@
     background-position: 80% 50%;
     box-sizing: border-box;
     height: 445px;
-    padding: 145px 15px 155px;
+    padding: 145px 55px 155px;
     color: white;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+        background-size: 200%;
+        height: 300px;
+        padding: 10px 15px 45px;
+    }
   
-    @media (min-width: 650px) {
-        padding: 145px 55px 155px;
+    @media (max-width: 500px) {
+        height: 185px;
     }
 
     h1 {
@@ -20,6 +26,10 @@
         font-weight: 900;
         line-height: 1.25;
         margin: auto;
+
+        @media (max-width: 768px) {
+            font-size: 30px;
+        }
     }
 
     p {

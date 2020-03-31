@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './CategoryServices.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import productImg from '../../assets/images/product-12.png'
 import Products from '../shared/Products/Products';
@@ -19,6 +18,7 @@ const CategoryServices = (props) => {
                     <h1>Services</h1>
                     <div></div>
                 </div>
+                <div className={styles.hide}>Hide Filter</div>
                 <div className={styles.filters}>
                     <div className={styles.column}>
                         <div className={styles.filter}>
@@ -63,7 +63,7 @@ const CategoryServices = (props) => {
                 <h6>12,931 <span>results in apparel</span></h6>
                 <div className={styles.itemsContainer}>
                     {
-                        props.products.map(p => p.type !== 3
+                        props.products.map(p => (p.type !== 3)&&(p.id < 9)
                             ? <div className={styles.item}>
                                 <img src={p.photo} alt="" className ={styles.itemImage} />
                                 <h5>{p.name}</h5>
@@ -84,6 +84,15 @@ const CategoryServices = (props) => {
                     {
                         props.products.map(p => p.type !== 3
                             ? <div className={styles.item}>
+                                <img src={p.photo} alt="" className ={styles.itemImage} />
+                                <h5>{p.name}</h5>
+                                <p>$ {p.price}</p>
+                            </div>
+                            : null)
+                    }
+                    {
+                        props.products.map(p => (p.type !== 3)&&(p.id > 3)
+                            ? <div className={styles.itemMobile}>
                                 <img src={p.photo} alt="" className ={styles.itemImage} />
                                 <h5>{p.name}</h5>
                                 <p>$ {p.price}</p>

@@ -23,3 +23,32 @@ $button-grey: #2d343a;
   margin: auto;
   width: 100%;
 }
+
+@mixin buttonOptions {
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  will-change: box-shadow;
+  transition: box-shadow .2s cubic-bezier(.4,0,1,1),
+              background-color .2s cubic-bezier(.4,0,.2,1),
+              color .2s cubic-bezier(.4,0,.2,1);
+}
+
+@mixin transition {
+  transition: box-shadow .2s cubic-bezier(.4,0,1,1),
+              background-color .2s cubic-bezier(.4,0,.2,1),
+              color .2s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes show{
+  0%{
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+}

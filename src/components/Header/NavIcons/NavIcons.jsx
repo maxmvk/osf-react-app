@@ -11,7 +11,7 @@ const NavIcons = (props) => {
             <div><FontAwesomeIcon icon={faSearch} flip="horizontal" /></div>
             <div onClick={() => { props.toogleIsLoginModal(true) }} ><FontAwesomeIcon icon={faUser} /></div>
             <div><FontAwesomeIcon icon={faHeart} />{props.wishCount !== 0? <span>{props.wishCount}</span> : null}</div>
-            <div><FontAwesomeIcon icon={faShoppingBag} />{props.productCount !== 0?<span>{props.productCount}</span> : null}</div>
+            <div><NavLink to="/shopping-cart" ><FontAwesomeIcon icon={faShoppingBag} />{props.productCount !== 0?<span>{props.productCount}</span> : null}</NavLink></div>
         </div>
     )
 }

@@ -1,26 +1,35 @@
 const TOOGLE_IS_DROPDOWN_SERVICES = "TOOGLE_IS_DROPDOWN_SERVICES";
+const TOOGLE_IS_MENU_ITEM_SERVICES = "TOOGLE_IS_MENU_ITEM_SERVICES";
+const TOOGLE_IS_PRODUCT_CATEGORIES = "TOOGLE_IS_PRODUCT_CATEGORIES";
+const TOOGLE_IS_SALE = "TOOGLE_IS_SALE";
 const TOOGLE_IS_LOGIN_MODAL = "TOOGLE_IS_LOGIN_MODAL";
 const TOOGLE_IS_PASSWORD_VISIBLE = "TOOGLE_IS_PASSWORD_VISIBLE";
-const INCREASE_WISH_COUNT = "INCREASE_WISH_COUNT";
-const INCREASE_PRODUCT_COUNT = "INCREASE_PRODUCT_COUNT";
-const INCREASE_QUANTITY = "INCREASE_QUANTITY";
-const DECREASE_QUANTITY = "DECREASE_QUANTITY";
-const SET_QUANTITY = "SET_QUANTITY";
-const ADD_QUANTITY_PRODUCTS = "ADD_QUANTITY_PRODUCTS";
 
 let initialState = {
     isDropdownServices: false,
+    isMenuItemServices: false,
+    isProductCategories: false,
+    isSale: false,
     isLoginModal: false,
-    isPasswordVisible: false,
-    wishCount: 0,
-    productCount: 0,
-    quantity: 1
+    isPasswordVisible: false
 }
 
 const headerReducer = (state = initialState, action) => {
     switch (action.type) {
         case TOOGLE_IS_DROPDOWN_SERVICES: {
             return {...state, isDropdownServices: action.isDropdownServices}
+        }
+
+        case TOOGLE_IS_MENU_ITEM_SERVICES: {
+            return {...state, isMenuItemServices: action.isMenuItemServices}
+        }
+
+        case TOOGLE_IS_PRODUCT_CATEGORIES: {
+            return {...state, isProductCategories: action.isProductCategories}
+        }
+
+        case TOOGLE_IS_SALE: {
+            return {...state, isSale: action.isSale}
         }
 
         case TOOGLE_IS_LOGIN_MODAL: {
@@ -31,43 +40,16 @@ const headerReducer = (state = initialState, action) => {
             return {...state, isPasswordVisible: action.isPasswordVisible}
         }
 
-        case INCREASE_WISH_COUNT: {
-            return {...state, wishCount: ++state.wishCount }
-        }
-
-        case INCREASE_PRODUCT_COUNT: {
-            return {...state, productCount: ++state.productCount }
-        }
-
-        case INCREASE_QUANTITY: {
-            return {...state, quantity: ++state.quantity }
-        }
-
-        case DECREASE_QUANTITY: {
-            return {...state, quantity: --state.quantity }
-        }
-
-        case SET_QUANTITY: {
-            return {...state, quantity: action.quantity }
-        }
-
-        case ADD_QUANTITY_PRODUCTS: {
-            return {...state, productCount: state.productCount + state.quantity }
-        }
-
         default:
             return state;
     }
 }
 
 export const toogleIsDropdownServices = (isDropdownServices) => ({ type: TOOGLE_IS_DROPDOWN_SERVICES, isDropdownServices })
+export const toogleIsMenuItemServices = (isMenuItemServices) => ({ type: TOOGLE_IS_MENU_ITEM_SERVICES, isMenuItemServices })
+export const toogleIsProductCategories = (isProductCategories) => ({ type: TOOGLE_IS_PRODUCT_CATEGORIES, isProductCategories })
+export const toogleIsSale = (isSale) => ({ type: TOOGLE_IS_SALE, isSale })
 export const toogleIsLoginModal = (isLoginModal) => ({ type: TOOGLE_IS_LOGIN_MODAL, isLoginModal })
 export const toogleIsPasswordVisible = (isPasswordVisible) => ({ type: TOOGLE_IS_PASSWORD_VISIBLE, isPasswordVisible })
-export const increaseWishCount = () => ({ type: INCREASE_WISH_COUNT })
-export const increaseProductCount = () => ({ type: INCREASE_PRODUCT_COUNT })
-export const increaseQuantity = () => ({ type: INCREASE_QUANTITY })
-export const decreaseQuantity = () => ({ type: DECREASE_QUANTITY })
-export const setQuantity = (quantity) => ({ type: SET_QUANTITY, quantity })
-export const addQuantityProducts = () => ({ type: ADD_QUANTITY_PRODUCTS })
 
 export default headerReducer;
